@@ -1,0 +1,65 @@
+{
+  "name": "plugin-sms-media",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "bootstrap": "flex-plugin check-start",
+    "prebuild": "rimraf build && npm run bootstrap",
+    "build": "flex-plugin build",
+    "clear": "flex-plugin clear",
+    "predeploy": "npm run build",
+    "deploy": "flex-plugin deploy",
+    "eject": "flex-plugin eject",
+    "info": "flex-plugin info",
+    "postinstall": "npm run bootstrap",
+    "list": "flex-plugin list",
+    "remove": "flex-plugin remove",
+    "prestart": "npm run bootstrap",
+    "start": "flex-plugin start",
+    "test": "flex-plugin test --env=jsdom"
+  },
+  "devDependencies": {
+    "@material-ui/core": "^3.9.3",
+    "@twilio/flex-ui": "^1.19.0",
+    "react-app-rewire-flex-plugin": "1.1.1",
+    "react-app-rewired": "^1.6.2"
+  },
+  "dependencies": {
+    "@craco/craco": "^5.0.2",
+    "@material-ui/core": "^3.9.3",
+    "axios": "^0.19.2",
+    "babel-polyfill": "^6.26.0",
+    "core-js": "^2.6.5",
+    "craco-config-flex-plugin": "^3.4.3",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "faker": "^4.1.0",
+    "flex-plugin": "^3.0.0",
+    "flex-plugin-scripts": "^3.4.3",
+    "keytar": "^5.6.0",
+    "loadjs": "^4.2.0",
+    "moment": "^2.25.3",
+    "node-fetch": "^2.6.0",
+    "querystring": "^0.2.0",
+    "react": "16.5.2",
+    "react-dom": "16.5.2",
+    "react-event-timeline": "^1.6.3",
+    "react-icons": "^3.10.0",
+    "react-scripts": "^3.4.1",
+    "react-test-renderer": "^16.8.6",
+    "request": "^2.88.2"
+  },
+  "config-overrides-path": "node_modules/react-app-rewire-flex-plugin",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

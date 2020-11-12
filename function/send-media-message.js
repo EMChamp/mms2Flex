@@ -11,9 +11,10 @@ exports.handler = TokenValidator(async function (context, event, callback) {
   const { to, mediaUrl } = event;
 
   const client = Twilio(context.ACCOUNT_SID, context.AUTH_TOKEN);
+
   try {
     const result = await client.messages.create({
-      from: context.TWILIO_WHATSAPP_NUMBER,
+      from: "whatsapp:" + context.TWILIO_WHATSAPP_NUMBER,
       to,
       mediaUrl
     });
@@ -21,8 +22,9 @@ exports.handler = TokenValidator(async function (context, event, callback) {
     response.setBody(JSON.stringify({ success: true }));
     callback(null, response);
   } catch (error) {
-    console.log('error creating message:', error);
+    console.log('error creating message:', error.message);
     response.setBody(JSON.stringify({ success: false, error }));
     callback(response, null);
   }
+
 });
